@@ -12,10 +12,16 @@ interface Manager {
   team: string;
 }
 
-function promoteToManager(dev, team) {
-  
+function promoteToManager(dev: Developer, team: string) {
+  const management: Partial<Manager> = {team}
+
+  const newUpdate = Object.assign({}, dev, management)
+  console.log(newUpdate)
+
+  // console.log(dev, team)
 }
 
 // Expected output:
-promoteToManager({ name: "Alice", skills: ["TypeScript", "React"] }, "Frontend Team") 
+(promoteToManager({ name: "Alice", skills: ["TypeScript", "React"] }, "Frontend Team") )
+
 // { name: "Alice", skills: ["TypeScript", "React"], team: "Frontend Team" }

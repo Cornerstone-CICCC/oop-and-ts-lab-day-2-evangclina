@@ -3,11 +3,17 @@
 // Return type: string.
 
 interface UserProfile {
-  
+  username: string
+  email: string
+  lastLogin?: object
 }
 
-function getLastLoginMessage(user) {
-  
+function getLastLoginMessage(user: UserProfile) {
+  if(user.lastLogin){
+    console.log(`${user.lastLogin}`)
+  }else{
+    console.log(`No login recorded.`)
+  }
 }
 
 // Expected output:

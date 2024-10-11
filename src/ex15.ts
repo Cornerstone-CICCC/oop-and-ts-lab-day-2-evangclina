@@ -7,8 +7,18 @@ interface Product {
   category: string;
 }
 
-function groupByCategory(products) {
-  
+function groupByCategory(products: Product[]) {
+  const filtered =  products.filter(p => p.category === "Fruit")
+
+  const filtered2 = products.filter(p => p.category === "Vegetable")
+  // console.log(filtered2)
+
+  const newObject = {
+    Fruits: filtered,
+    Vegetables: filtered2
+  }
+
+  console.log(newObject)
 }
 
 // Expected output:

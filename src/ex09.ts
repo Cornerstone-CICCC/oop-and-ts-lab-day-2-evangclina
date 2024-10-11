@@ -3,11 +3,13 @@
 // - Return type: a new tuple with the student added.
 
 type Course = [
-  
+    course: string, 
+    instructor: string,
+    ...studentNames: string[]
 ];
 
-function addStudent(course, student) {
-  
+function addStudent(course: Course, student: string): void {
+    console.log([...course, student])
 }
 
 // Expected output:

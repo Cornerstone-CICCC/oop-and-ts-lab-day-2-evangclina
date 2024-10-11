@@ -2,9 +2,14 @@
 // - The latitude is required, but the longitude is optional. 
 // - Use a type guard to log different messages based on whether the longitude is provided.
 // - Return type: void.
+type LatLng = [latitude: number, longitude?: number];
 
-function logCoordinates(coords) {
-  
+function logCoordinates(coords: LatLng): void {
+    if (coords.length === 2){
+        console.log(`Latitude: ${coords[0]}, Longitude: ${coords[1]}`)
+    } else{
+        console.log(`Latitude: ${coords[0]}`)
+    }
 }
 
 // Expected output:

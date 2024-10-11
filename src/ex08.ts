@@ -9,11 +9,15 @@ interface Employee {
 }
 
 interface Company {
-
+  name: string, 
+  address: string, 
+  employees: Employee 
 }
 
-function updateCompany(company, updates) {
-  
+function updateCompany(company:  Partial<Company>, updates: Employee) {
+  // console.log(updates)
+  const newUpdate = Object.assign({}, company, updates)
+  console.log(newUpdate)
 }
 
 // Expected output:

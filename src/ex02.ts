@@ -7,11 +7,16 @@ interface Team {
   members: { name: string; role: string }[];
 }
 
-function updateTeam(team, updates) {
+// Partial<Team>
 
+function updateTeam (team: Team, updates: Partial<Team>): void {
+  const newUpdate = Object.assign({}, team, updates)
+  console.log(newUpdate)
 }
 
 // Expected output:
-const team = { name: "Dev Team", members: [{ name: "Alice", role: "Developer" }] };
+const team: Team = { name: "Dev Team", members: [{ name: "Alice", role: "Developer" }] };
+
+
 updateTeam(team, { members: [{ name: "Bob", role: "Designer" }] }) 
 // { name: "Dev Team", members: [{ name: "Bob", role: "Designer" }] }

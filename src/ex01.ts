@@ -6,8 +6,20 @@
 // - Return type: string for string inputs, number for number inputs.
 
 
-function transformInput(x) {
-
+function transformInput(x: string): string
+function transformInput(x: number): number
+function transformInput(x: any): any {
+    if(typeof x === "string"){
+        console.log( x.split("").reverse().join(""))
+    }else if (typeof x === "number"){
+        let result = 1
+        for(let i = 1;  i <= x; i++){
+            result *= i
+        }
+        console.log(result)
+    }else{
+        throw new Error("Unsupported type")
+    }
 }
 
 // Expected output:
